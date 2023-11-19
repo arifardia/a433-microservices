@@ -39,15 +39,56 @@ a433-microservices-item-db-1  | 2023-11-19T17:53:43.386+0000 I NETWORK  [conn1] 
 a433-microservices-item-db-1  | 2023-11-19T17:55:09.434+0000 I STORAGE  [conn1] createCollection: accumulator.documents with generated UUID: b0bf809e-2b2c-4315-8a65-35b0eeff6883
 a433-microservices-item-db-1  | 2023-11-19T17:55:09.498+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:53754 #2 (2 connections now open)
 a433-microservices-item-db-1  | 2023-11-19T17:55:09.735+0000 I COMMAND  [conn1] command accumulator.documents command: insert { insert: "documents", ordered: true, $db: "accumulator" } ninserted:1 keysInserted:1 numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 301ms
+a433-microservices-item-db-1  | 2023-11-19T18:10:37.991+0000 I NETWORK  [conn2] end connection 172.18.0.3:53754 (1 connection now open)
+a433-microservices-item-db-1  | 2023-11-19T18:10:37.992+0000 I NETWORK  [conn1] end connection 172.18.0.3:39600 (0 connections now open)
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.564+0000 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.564+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.564+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.565+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.570+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.735+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.735+0000 I CONTROL  [signalProcessingThread] now exiting
+a433-microservices-item-db-1  | 2023-11-19T18:10:38.735+0000 I CONTROL  [signalProcessingThread] shutting down with code:0
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.322+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=e20c85e7555f
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] db version v3.6.23
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] modules: none
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] build environment:
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten]     distarch: x86_64
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.325+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.326+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.326+0000 I STORAGE  [initandlisten] 
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.326+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+a433-microservices-item-db-1  | 2023-11-19T23:18:14.327+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
 a433-microservices-item-app-1  | 
 a433-microservices-item-app-1  | > docker-software-delivery@1.0.0 start /app
 a433-microservices-item-app-1  | > node ./bin/www
 a433-microservices-item-app-1  | 
 a433-microservices-item-app-1  | NODE_ENV: production
 a433-microservices-item-app-1  | Connected to database
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m15867.028 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m36.951 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m393.015 ms - 186999[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m563.212 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET /api [32m200 [0m842.684 ms - 2[0m
-a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m722.394 ms - 50[0m
+a433-microservices-item-db-1   | 2023-11-19T23:18:14.327+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=835M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+a433-microservices-item-db-1   | 2023-11-19T23:18:22.030+0000 I STORAGE  [initandlisten] WiredTiger message [1700435902:30109][1:0x7f9fea2bca40], txn-recover: Main recovery loop: starting at 1/28416
+a433-microservices-item-db-1   | 2023-11-19T23:18:22.663+0000 I STORAGE  [initandlisten] WiredTiger message [1700435902:662987][1:0x7f9fea2bca40], txn-recover: Recovering log 1 through 2
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.050+0000 I STORAGE  [initandlisten] WiredTiger message [1700435903:50763][1:0x7f9fea2bca40], txn-recover: Recovering log 2 through 2
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.274+0000 I STORAGE  [initandlisten] WiredTiger message [1700435903:274589][1:0x7f9fea2bca40], txn-recover: Set global recovery timestamp: 0
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.396+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.399+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.400+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.400+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.400+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.401+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.402+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.404+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.430+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.432+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.432+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+a433-microservices-item-db-1   | 2023-11-19T23:18:23.432+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+a433-microservices-item-db-1   | 2023-11-19T23:18:24.123+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:38280 #1 (1 connection now open)
+a433-microservices-item-db-1   | 2023-11-19T23:18:24.149+0000 I NETWORK  [conn1] received client metadata from 172.18.0.3:38280 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "6.4.16-linuxkit" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
+a433-microservices-item-db-1   | 2023-11-19T23:20:02.999+0000 I NETWORK  [conn1] end connection 172.18.0.3:38280 (0 connections now open)
+a433-microservices-item-db-1   | 2023-11-19T23:20:06.459+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:60350 #2 (1 connection now open)
+a433-microservices-item-db-1   | 2023-11-19T23:20:06.468+0000 I NETWORK  [conn2] received client metadata from 172.18.0.3:60350 conn2: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "6.4.16-linuxkit" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }

@@ -6,17 +6,13 @@ services:
   item-app:
     # Menggunakan image item-app dari github packages
     image: ghcr.io/arifardia/item-app:v1
-    environment:
-      NODE_ENV: production
-      DB_HOST: item-db
-    working_dir: /app
-    command: sh -c "npm start"
     ports: 
       # Melakukan port mapping agar dapat diakses dari port 80 di host
       - 80:8080
     depends_on:
       # Memastikan item-app hanya berjalan setelah item-db diluncurkan
       - item-db
+      # menerapkan restart policy
     restart: always
 
   item-db:
