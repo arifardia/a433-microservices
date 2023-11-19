@@ -1,0 +1,33 @@
+# Menggunakan Docker Compose versi 2 atau lebih
+version: '2'
+
+#Memiliki dua buah service: item-app dan item-db
+services:
+  item-app:
+    # Menggunakan image item-app dari github packages
+    image: ghcr.io/arifardia/item-app:v1
+    environment:
+      NODE_ENV: production
+      DB_HOST: item-db
+    working_dir: /app
+    command: sh -c "npm start"
+    ports: 
+      # Melakukan port mapping agar dapat diakses dari port 80 di host
+      - 80:8080
+    depends_on:
+      # Memastikan item-app hanya berjalan setelah item-db diluncurkan
+      - item-db
+    restart: always
+
+  item-db:
+    # menggunakan image mongo:3 dari docker hub
+    image: mongo:3
+    volumes:
+      # memakai volume app-db dengan target /data/db
+      - app-db:/data/db
+      # menerapkan restart policy
+    restart: always
+
+volumes:
+  # memiliki 1 volume bernama app-db
+  app-db:
